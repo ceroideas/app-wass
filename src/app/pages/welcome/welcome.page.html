@@ -1,0 +1,42 @@
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+
+      <section class="slider">
+        <section class="splach">
+          <img src="../../assets/images/turista-02.png" alt="Turista">
+          <img src="../../assets/images/police.png" alt="Police">
+        </section>
+        <ion-text text-center color="medium">
+          <small>Are you one of those who like to <br> explore cities?</small>
+        </ion-text>
+      </section>
+    </ion-slide>
+    <ion-slide>
+      <section class="slider">
+        <section class="splach">
+          <img src="../../assets/images/turista-01.png" alt="Turista">
+          <img src="../../assets/images/thief.png" alt="Thief">
+        </section>
+        <ion-text text-center color="medium">
+          <small>Do you know that in cities you make areas <br> that are not very safe?</small>
+        </ion-text>
+      </section>
+    </ion-slide>
+    <ion-slide>
+      <section class="slider">
+        <section class="splach">
+          <img src="../../assets/images/turista-03.png" alt="Turista">
+          <img src="../../assets/images/mapa.png" alt="map" style="margin-left: -70px; z-index: -1">
+        </section>
+        <ion-text text-center color="medium">
+          <small>Explore the city in complete saety. Our App <br> guides you through the safest areas?</small>
+        </ion-text>
+        <ion-button (click)="goPageRegister()" class="btn-linear-gradient" shape="round" expand="block" size="medium" style="margin: 50px 0px 20px 0px;">JOIN US</ion-button>
+        <ion-button (click)="goPageLogin()" shape="round" fill="outline" expand="block" size="medium">SIGN IN</ion-button>
+      </section>
+    </ion-slide>
+  </ion-slides>
+
+
+</ion-content>

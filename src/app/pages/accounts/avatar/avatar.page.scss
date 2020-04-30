@@ -1,0 +1,21 @@
+ion-content{
+    --background: #FFF !important;
+}
+
+ion-button{
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#upload-image, img{
+
+    background:  rgba(234, 234, 234, 0.50);
+    width: 200px;
+    height: 200px;
+    border-radius: 50% !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

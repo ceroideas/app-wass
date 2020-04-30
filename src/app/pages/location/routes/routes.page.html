@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar mode="ios" color="dark">
+    <ion-title text-center>Routes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="" color="light" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="input-address" @container *ngIf="showInputAddress">
+    <p>Create your route from your location or wherever you want</p>
+
+      <ion-row>
+        <ion-col sizeXs="10" offsetXs="1">
+          <div class="inputs">
+            <ion-icon name="locate" color="primary"></ion-icon>
+            <ion-input [(ngModel)]="startAutocomplete.input" (ionInput)="startSearchResults()" placeholder="Starting location" class="ion-input-custom"></ion-input>
+          </div>
+          <div class="inputs">
+            <ion-icon name="compass" color="secondary"></ion-icon> 
+            <ion-input [(ngModel)]="travelAutocomplete.input" (ionInput)="travelSearchResults()" placeholder="Select destination" class="ion-input-custom"></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+      
+      <ion-list [hidden]="autocompleteItems.length == 0">
+        <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+          {{ item.description }}
+        </ion-item>
+      </ion-list>
+  </div>
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button color="dark" (click)="inputAddress()">
+      <ion-icon name="locate"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div #map id="map"></div>
+</ion-content>

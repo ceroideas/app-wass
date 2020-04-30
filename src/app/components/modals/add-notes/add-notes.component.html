@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar mode="ios" color="dark">
+    <ion-buttons slot="end">
+      <ion-button (click)="modalDismiss()">
+        <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+  <!-- <app-header-top></app-header-top> -->
+
+  <section class="body">
+    <ion-text text-center>
+      <h5><strong>You are in the neighborhood</strong></h5>
+      <p>
+        <small>You can write about the geolocated neighborhood or select another neighborhood</small>
+      </p>
+    </ion-text>
+
+    <form (ngSubmit)="onFormSubmit( form )">
+      <ion-grid no-padding no-margin>
+        <ion-row padding>
+          <ion-col>
+
+            <ion-select class="ion-select-custom" name="communityId" [(ngModel)]="communityIndex" placeholder="Select the neighborhood" value="" okText="Listo" cancelText="Cancelar">
+              <ion-select-option [value]="i" *ngFor="let community of communities; let i = index">{{community.street}}</ion-select-option>
+            </ion-select>
+
+            <ion-text text-center>
+              <h5>Star ratings</h5>
+            </ion-text>
+            <bar-rating [(rate)]="rate" [max]="5" [theme]="'stars'" id="bar-rating"></bar-rating>
+
+            <ion-textarea name="comment" clearInput [(ngModel)]="comment" placeholder="Write the comment" color="medium" class="mt-20 ion-textarea-custom"></ion-textarea>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <section padding>
+        <ion-button type="submit" color="primary" expand="block" size="medium">COMMENT</ion-button>
+      </section>
+    </form>
+  </section>
+</ion-content>

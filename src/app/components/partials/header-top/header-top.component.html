@@ -1,0 +1,14 @@
+<div class="header-top-page">
+    <div class="bg-image">
+
+        <img src="{{ user.avatar }}" *ngIf="user.avatar"
+        alt="" 
+        >
+
+        <img src="../../../../assets/images/girl.png" *ngIf="!user.avatar"
+        alt="" 
+        >
+    </div>
+
+    <h4 class="title-name">{{ user.firstName }}</h4>
+</div>

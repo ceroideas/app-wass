@@ -1,0 +1,32 @@
+<ion-content>
+
+  <div class="image-post" [ngStyle]="{'background-image': 'url(' + postDetail.images[0].img + ')'}">
+    
+    <ion-back-button defaultHref="/blog" color="light" text=""></ion-back-button>
+    
+    <ion-text text-center color="light">
+      <h3>{{ postDetail.title }}</h3>
+    </ion-text>
+  </div>
+  
+  <ion-grid padding>
+    <ion-row>
+      <ion-col sizeXl="12" sizeSm="12" sizeMd="8" offsetMd="2">
+        <p class="capitalLetter" [innerHtml]="postDetail.shortDescription"></p>
+        <p [innerHtml]="postDetail.description"></p>        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-segment-options></app-segment-options>
+
+</ion-content>
+
+<!-- <ion-footer padding>
+  <ion-toolbar>
+    <ion-icon name="bookmark" color="medium" size="large"></ion-icon>
+    <ion-icon name="heart-empty" color="medium" size="large"></ion-icon>
+    <ion-icon name="chatbubbles" color="medium" size="large"></ion-icon>
+    <ion-note slot="end" color="dark">NEXT</ion-note>
+  </ion-toolbar>
+</ion-footer> -->

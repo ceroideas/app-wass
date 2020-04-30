@@ -1,0 +1,57 @@
+<!-- <ion-header>
+  <ion-toolbar mode="ios">
+    <ion-title text-center class="text-linear-gradient">Sign In</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/register" color="primary"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<app-component-preload *ngIf="preload"></app-component-preload>
+
+<ion-content *ngIf="!preload">
+  <!-- <section class="img-center-top">
+    <img src="../../assets/images/thief.png" alt="Thief" width="140px">
+    <img src="../../assets/images/police.png" alt="Police" height="250px">
+  </section> -->
+  <section class="login-content">
+    <ion-grid no-padding no-margin>
+      <img src="../../../../assets/images/girl.png" 
+      alt="" 
+      style="width: 80px; height: 80px; border-radius: 50%; display: block; margin: auto;">
+      <ion-row padding>
+        <ion-col sizeXs="10" offsetXs="1" sizeXl="12" sizeSm="6" offsetSm="3">
+          <form [formGroup]="loginForm">
+            
+            <section class="validation-form" *ngIf="loginForm.get('email').errors && loginForm.get('email').dirty">
+              <ion-note color="light" *ngIf="loginForm.get('email').hasError('required')"><p>Is required</p></ion-note>
+              <ion-note color="light" *ngIf="loginForm.get('email').hasError('email')"><p>Invalid email</p></ion-note>
+            </section>
+                      
+            <ion-input type="email" clearInput placeholder="Email" color="medium" class="ion-input-custom" formControlName="email"></ion-input>
+            
+            <section class="validation-form" *ngIf="loginForm.get('password').errors && loginForm.get('password').dirty">
+                <ion-note color="light" *ngIf="loginForm.get('password').hasError('required')"><p>Is required</p></ion-note>
+            </section>
+
+            <ion-input type="password" clearInput placeholder="Password" color="medium" class="ion-input-custom" formControlName="password"></ion-input>
+          
+            <ion-button [disabled]="!loginForm.valid" (click)="onFormSubmit(loginForm.value)" class="btn-linear-gradient mt-50" expand="block" size="medium">LOG IN</ion-button>
+      
+            <ion-text text-center color="light">
+            <p><small>You don’t have an account ? <ion-text color="light" (click)="goPageRegister()"><strong>Sign Up</strong></ion-text></small></p>
+            </ion-text>
+
+            <ion-text text-center color="light" class="mt-50">
+              <p><small>Forgot Password?</small></p>
+            </ion-text>
+
+            <img src="../../../../assets/images/wass-logo.png" 
+            alt="" 
+            style="width: 45px; height: 52px; border-radius: 50%; display: block; margin: auto;">
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+</ion-content>

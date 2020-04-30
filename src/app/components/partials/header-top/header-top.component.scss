@@ -1,0 +1,38 @@
+.header-top-page{
+    height: 150px;
+    background-color: var(--ion-color-dark);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    position: absolute;
+    width: 100%;
+    top: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+
+    .bg-image{
+        background-image: url('/assets/images/wass-logo.png');
+        background-position: center;
+        width: 100%;
+        height: 150px;
+        background-size: 70px;
+        background-repeat: no-repeat;
+
+        display: flex; justify-content: center;
+        align-items: center;
+
+        img{
+            width: 45px; height: 45px; border-radius: 50%; margin-left: 12px;
+        }
+    }
+
+    .title-name{
+        margin-top: 0 !important;
+        position: relative;
+        top: -8px;
+        font-size: 18px;
+        color: #FFF;
+    }
+}

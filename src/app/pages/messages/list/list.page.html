@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar mode="ios" color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="" color="light" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<app-component-preload *ngIf="preload"></app-component-preload>
+
+<ion-content *ngIf="!preload">
+  
+  <app-header-top></app-header-top>
+  
+  <ion-list lines="none">
+    <ion-item (click)="getConversationMessages(i)" *ngFor="let conversation of conversations; let i = index;">
+      <ion-avatar slot="start">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+      </ion-avatar>
+      <ion-label>
+        <h3><strong>{{conversationUsers[i].firstName}}</strong></h3>
+        <ion-text text-wrap color="medium"><small>{{ conversation[0].body }}</small></ion-text>
+      </ion-label>
+      <ion-icon name="radio-button-off" slot="end" color="danger"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <app-segment-options></app-segment-options>
+
+</ion-content>

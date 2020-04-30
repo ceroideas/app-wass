@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-title text-center class="text-linear-gradient">Edit profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="" text="" color="primary"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<app-component-preload *ngIf="preload"></app-component-preload>
+
+<ion-content padding *ngIf="!preload">
+
+  <ion-text>
+    <h4>Information personal</h4>
+  </ion-text>
+
+  <form [formGroup]="registerForm">
+    <ion-grid no-padding no-margin>
+      <ion-row padding>
+        <section id="upload-image" (click)="getPhoto()">
+          <img src="{{ imgPreview }}" *ngIf="imgPreview">
+          <img src="{{ user.avatar }}" *ngIf="user.avatar && !imgPreview">
+        </section>
+        <ion-col size="12">
+          <ion-label>Name</ion-label>
+          <ion-input type="text" clearInput placeholder="Write your name" color="medium" class="ion-input-custom" formControlName="firstName"></ion-input>
+          <section class="validation-form" *ngIf="registerForm.get('firstName').errors && registerForm.get('firstName').dirty">
+            <ion-note color="danger" *ngIf="registerForm.get('firstName').hasError('required')"><p>Is required</p></ion-note>
+          </section>  
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-label>Nationality</ion-label>
+          <ion-select placeholder="Select your nationality" class="ion-select-custom" formControlName="nationality">
+            <ion-select-option [value]="country.code" *ngFor="let country of optionsContries">{{ country.name }}</ion-select-option>
+          </ion-select>
+          <section class="validation-form" *ngIf="registerForm.get('nationality').errors && registerForm.get('nationality').dirty">
+            <ion-note color="danger" *ngIf="registerForm.get('nationality').hasError('required')"><p>Is required</p></ion-note>
+          </section> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <section padding>
+      <ion-button [disabled]="!registerForm.valid" (click)="onFormSubmit(registerForm.value)" type="submit" color="primary" class="mt-20" shape="round" expand="block" size="medium">SAVE</ion-button>
+    </section>
+  </form>
+
+  <ion-text>
+    <h4>Change password</h4>
+  </ion-text>
+
+  <form [formGroup]="passwordForm">
+    <ion-grid no-padding no-margin>
+      <ion-row padding>
+        <ion-col size="12">
+          <ion-label>Password</ion-label>
+          <ion-input type="password" clearInput placeholder="Your password" color="medium" class="ion-input-custom" formControlName="password"></ion-input>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-label>Repeat password</ion-label>
+          <ion-input type="password" clearInput placeholder="Repeat password" color="medium" class="ion-input-custom" formControlName="rePassword"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <section padding>
+      <ion-button [disabled]="!passwordForm.valid" (click)="onFormSubmitPassword(passwordForm.value)" type="submit" color="primary" class="mt-20" shape="round" expand="block" size="medium">SAVE</ion-button>
+    </section>
+  </form>
+
+</ion-content>

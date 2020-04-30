@@ -1,0 +1,19 @@
+<ion-segment>
+  <ion-segment-button (click)="goSegment('profile')" id="user">
+    <img src="../../../../assets/images/user.png" alt="">
+  </ion-segment-button>
+  <ion-segment-button (click)="goSegment('blog')">
+    <img src="../../../../assets/images/blogging.png" alt="">
+  </ion-segment-button>
+  <ion-segment-button class="center-top" (click)="goSegment('map')">
+    <div class="image">
+      <img src="../../../../assets/images/homepage.png" alt="">
+    </div>
+  </ion-segment-button>
+  <ion-segment-button (click)="linkSegment('way')">
+    <img src="../../../../assets/images/way.png" alt="">
+  </ion-segment-button>
+  <ion-segment-button id="settings" (click)="logout()">
+    <img src="../../../../assets/images/icon-logout.png" alt="">
+  </ion-segment-button>
+</ion-segment>

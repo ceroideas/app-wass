@@ -1,0 +1,28 @@
+ion-content{
+    --background: var(--ion-color-dark) !important;
+    --color: #FFF;
+
+    .body{
+        width: 90%;
+        display: block;
+        margin: auto;
+        height: 90vh;
+        // display: flex;
+        // justify-content: center;
+        // flex-direction: column;
+
+        h5{
+            color: var(--ion-color-primary) !important;
+        }
+
+        ion-input, ion-textarea{
+            --background: #FFF !important;
+            background: #FFF !important;
+        }
+    }
+
+    #bar-rating{
+        display: flex;
+        justify-content: center;
+    }
+}

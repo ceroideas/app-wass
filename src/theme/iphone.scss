@@ -1,0 +1,22 @@
+@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) {
+    .chat-input-message{
+        ion-item{
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.ios {
+    ion-input{
+        --padding-start: 10px !important;
+    }
+
+    ion-segment{
+        padding-bottom: 30px;
+        height: 80px !important;
+    }
+
+    ion-toolbar{
+        --border-width: 0px !important;
+    }
+}

@@ -1,0 +1,19 @@
+<ion-app>
+    <ion-menu side="start" contentId="menu">
+      <ion-content class="ion-content-menu">
+
+        <ion-list lines="none">
+          <ion-item (click)="goPage('profile')">Edit profile</ion-item>
+          <ion-item (click)="goPage('map')">Map</ion-item>
+          <ion-item (click)="goPage('blog')">Blog</ion-item>
+          <ion-item (click)="goPage('messages/chat')">Messages</ion-item>
+          <ion-item (click)="goPage('privacy')">Privacy Policy</ion-item>
+          <ion-item (click)="securityCall()">Security call</ion-item>
+          <ion-item (click)="goPage('about')">About us</ion-item>
+          <ion-item (click)="signOut()">Sign out</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="menu" swipeBackEnabled="false"></ion-router-outlet>
+  </ion-app>
+  

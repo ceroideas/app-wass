@@ -1,0 +1,7 @@
+{
+  "name": "SafeStreets",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

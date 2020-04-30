@@ -1,0 +1,13 @@
+:host{
+    ion-list{
+        margin-top: 240px;
+    }
+
+    ion-item{
+        border-bottom: solid 1px var(--ion-color-medium) !important;
+    }
+}
+
+ion-content{
+    --background: #FFF !important;
+}
