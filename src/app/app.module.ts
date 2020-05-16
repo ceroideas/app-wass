@@ -17,7 +17,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation/ngx';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+// import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { Base64 } from '@ionic-native/base64/ngx';
@@ -43,7 +43,7 @@ import { BarRatingModule } from 'ngx-bar-rating';
     CallNumber,
     OneSignal,
     BackgroundGeolocation,
-    InAppBrowser,
+    // InAppBrowser,
 
     ImagePicker,
     Base64

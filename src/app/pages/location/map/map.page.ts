@@ -28,7 +28,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 import { MenuService } from '../../../services/menu/menu.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { AddNotesComponent } from '../../../components/modals/add-notes/add-notes.component';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+// import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { LocationService } from '../../../services/location/location.service';
 import { UtilsService } from '../../../services/utils.service';
 import { trigger, style, animate, transition, group, query, animateChild } from '@angular/animations';
@@ -107,7 +107,7 @@ export class MapPage implements OnInit {
     private router: Router,
     private events: Events,
     private modalController: ModalController,
-    private inAppBrowser: InAppBrowser,
+    // private inAppBrowser: InAppBrowser,
     private locationService: LocationService,
     private utilsService: UtilsService
   ) {
@@ -415,7 +415,8 @@ export class MapPage implements OnInit {
   }
 
   openLink() {
-    const browser = this.inAppBrowser.create('http://www.renfe.com/viajeros/', '_self', 'location=yes');
+    window.open('http://www.renfe.com/viajeros/');
+    // const browser = this.inAppBrowser.create('', '_self', 'location=yes');
 
   }
 
